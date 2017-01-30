@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/profile', function () {
+    return 'Theerawat Kaewchote';
+});
+
+Route::get('/profile/name', 'ProfileController@getName');
+Route::get('/profile/surname', 'ProfileController@getSurname');
+Route::get('/profile/birthday', 'ProfileController@getBirthday');
+Route::get('/profile/age', 'ProfileController@getAge');

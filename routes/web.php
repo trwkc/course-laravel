@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/profile', function () {
-    return 'Theerawat Kaewchote';
+    return view('profile');
 });
 
 Route::get('/profile/name', 'ProfileController@getName');

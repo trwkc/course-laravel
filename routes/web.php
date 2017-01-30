@@ -23,3 +23,4 @@ Route::get('/profile/name', 'ProfileController@getName');
 Route::get('/profile/surname', 'ProfileController@getSurname');
 Route::get('/profile/birthday', 'ProfileController@getBirthday');
 Route::get('/profile/age', 'ProfileController@getAge');
+Route::get('/profile/birthYear/{year}', 'ProfileController@getBirthYear');

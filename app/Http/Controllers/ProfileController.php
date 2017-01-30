@@ -28,6 +28,10 @@ class ProfileController extends Controller
         return $age;
     }
 
+    function getBirthYear ($year) {
+        return $year - 543;
+    }
+
     function birthday () {
         $birthday = date_create('1991-05-23');
         return $birthday;

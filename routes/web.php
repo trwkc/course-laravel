@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'ReminderController@listTask');
 
 // Route::get('/profile', 'ProfileController@getProfile');
 

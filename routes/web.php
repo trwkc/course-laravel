@@ -12,13 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
-Route::get('/profile', 'ProfileController@getProfile');
+// Route::get('/profile', 'ProfileController@getProfile');
 
-Route::get('/profile/name', 'ProfileController@getName');
-Route::get('/profile/surname', 'ProfileController@getSurname');
-Route::get('/profile/birthday', 'ProfileController@getBirthday');
-Route::get('/profile/age', 'ProfileController@getAge');
-Route::get('/profile/birthYear/{year}', 'ProfileController@getBirthYear');
+// Route::get('/profile/name', 'ProfileController@getName');
+// Route::get('/profile/surname', 'ProfileController@getSurname');
+// Route::get('/profile/birthday', 'ProfileController@getBirthday');
+// Route::get('/profile/age', 'ProfileController@getAge');
+// Route::get('/profile/birthYear/{year}', 'ProfileController@getBirthYear');

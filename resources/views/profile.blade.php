@@ -14,29 +14,22 @@
   <body>
     <div class="container">
       <div class="jumbotron">
+      @foreach ($profiles as $profile)
         <div class="row">
           <div class="col-md-4">
-            <img src="images/profile.jpg" class="img-responsive img-circle img-profile">
+            <img src="images/{{$profile['image']}}" class="img-responsive img-circle img-profile">
           </div>
           <div class="col-md-8">
-            <h2>Theerawat Kaewchote (Por)</h2>
-            <li>Full Stack Developer - TMES Co.,Ltd.</li>
-            <li>Medium : <a href="https://medium.com/@aimoocpe">@aimoocpe</a></li>
+            <h2>{{$loop->iteration}}. {{$profile['name']}}</h2>
+            <li>{{$profile['occupation']}}</li>
+            <li>Medium : <a href="{{$profile['medium']}}">{{$profile['medium']}}</a></li>
+            <li>github : <a href="{{$profile['github']}}">{{$profile['github']}}</a></li>
             <hr>
           </div>
         </div>
         <hr>
-        <div class="row">
-          <div class="col-md-4">
-            <img src="images/profile.jpg" class="img-responsive img-circle img-profile">
-          </div>
-          <div class="col-md-8">
-            <h2>Theerawat Kaewchote (Por)</h2>
-            <li>Full Stack Developer - TMES Co.,Ltd.</li>
-            <li>Medium : <a href="https://medium.com/@aimoocpe">@aimoocpe</a></li>
-            <hr>
-          </div>
-        </div>
+        @endforeach
+        
       </div>
     </div>
   </body>

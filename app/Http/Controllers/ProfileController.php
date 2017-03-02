@@ -37,5 +37,12 @@ class ProfileController extends Controller
         return $birthday;
     }
 
+    function getProfile () {
+        $theerawat = ['name'=>'Theerawat Kaewchote (Por)', 'occupation'=>'Full Stack Developer - TMES Co.,Ltd.', 'medium'=>'https://medium.com/@aimoocpe', 'github'=>'https://github.com/aimoocpe','image'=>'profile.jpg'];
+        $john = ['name'=>'John Doe (john)', 'occupation'=>'Creator - Novacall', 'medium'=>'https://medium.com/@xxx', 'github'=>'https://github.com/xxx','image'=>'person.png'];
+        $myProfile = ['profiles'=>[$theerawat,$john]];
+        return view('profile',$myProfile);
+    }
+
 
 }

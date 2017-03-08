@@ -21,4 +21,8 @@ class ReminderController extends Controller
 
         return back();
     }
+
+    public function deleteReminder(){
+        
+    }
 }

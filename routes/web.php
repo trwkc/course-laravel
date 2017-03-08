@@ -12,7 +12,8 @@
 */
 
 Route::get('/', 'ReminderController@listTask');
-Route::post('reminder/new','ReminderController@addReminder');
+Route::post('/reminder/new','ReminderController@addReminder');
+Route::delete('/reminder/1/delete','ReminderController@deleteReminder');
 
 // Route::get('/profile', 'ProfileController@getProfile');
 

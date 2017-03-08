@@ -3,16 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class ReminderController extends Controller
 {
     public function listTask(){
-        $tasks = [
-            'Go to bank',
-            'Buy milk',
-            'Learn code'
-        ];
 
-        return view('home',['tasks'=>$tasks]);
+        $reminders = DB::table('reminder')->orderBy('id','asc')->get();
+
+        return view('home',['tasks'=>$reminders]);
+    }
+
+    public function addReminder(Request $request){
+        $content = $request->content;
+
+        DB::table('reminder')->insert(['content' => $content, 'isFinish' => false , 'createdBy' => 1]);
+
+        return back();
     }
 }

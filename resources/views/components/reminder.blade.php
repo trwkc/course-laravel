@@ -11,3 +11,9 @@
     </div>
   </fieldset>
 </form>
+
+@if (session('status'))
+    <div class="alert alert-success" role="alert">
+      <a href="#" class="alert-link">{{ session('status') }}</a>
+    </div>
+@endif

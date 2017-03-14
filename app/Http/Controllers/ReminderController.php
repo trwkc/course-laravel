@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Reminder;
+use App\ReminderType;
 
 class ReminderController extends Controller
 {
@@ -12,8 +13,9 @@ class ReminderController extends Controller
 
         //$reminders = DB::table('reminder')->orderBy('id','asc')->get();
         $reminders = Reminder::orderBy('id','asc')->get();
+        $types = ReminderType::get();
 
-        return view('home',['tasks'=>$reminders]);
+        return view('home',['tasks'=>$reminders,'types'=>$types]);
     }
 
     public function addReminder(Request $request){
@@ -24,6 +26,7 @@ class ReminderController extends Controller
         $reminder->content = $request->content;
         $reminder->isFinish = false;
         $reminder->createdBy = 1;
+        $reminder->ReminderType = $request->typeReminder;
 
         $reminder->save();
 
@@ -34,8 +37,8 @@ class ReminderController extends Controller
 
         $id = $request->id;
 
-        DB::table('reminder')->where('id',$id)->delete();
-
+        // DB::table('reminder')->where('id',$id)->delete();
+        Reminder::find($id)->delete();
         return back()->with('status','Task finished !!');
 
     }

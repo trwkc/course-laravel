@@ -6,7 +6,7 @@
         <div class="well"> 
             <div class="media">
             <div class="media-body">
-                <h4>{{$task->content}}</h4>
+                <h4>{{$task->content}}</h4>({{$task->type->tag}})
             </div>
             <div class="media-left media-middle">
                 <form action="reminder/delete" method="post">

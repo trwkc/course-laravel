@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddReminderType extends Migration
+class AlterReminderMap extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class AddReminderType extends Migration
      */
     public function up()
     {
-        Schema::create('reminderType', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('tag');
-            $table->timestamps();
+        Schema::table('reminder', function (Blueprint $table) {
+            $table->integer('reminderType')->unsigned()->nullable();
+            $table->foreign('reminderType')->references('id')->on('reminderType');
         });
     }
 
@@ -27,6 +26,8 @@ class AddReminderType extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reminderType');
+        Schema::table('reminder', function (Blueprint $table) {
+            //
+        });
     }
 }

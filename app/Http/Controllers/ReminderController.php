@@ -20,6 +20,13 @@ class ReminderController extends Controller
 
     public function addReminder(Request $request){
 
+        $this->validate($request, 
+            [
+                'content' => 'required',
+                'typeReminder' => 'required'
+            ]
+        );
+
         // $content = $request->content;
         // DB::table('reminder')->insert(['content' => $content, 'isFinish' => false , 'createdBy' => 1]);
         $reminder = new Reminder;
@@ -45,6 +52,11 @@ class ReminderController extends Controller
 
     public function addReminderType(Request $request)
     {
+        $this->validate($request, 
+            [
+                'tag' => 'required'
+            ]
+        );
         $type = new ReminderType;
         $type->tag = $request->tag;
         

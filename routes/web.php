@@ -11,9 +11,13 @@
 |
 */
 
-Route::get('/', 'ReminderController@listTask');
+Route::get('/', 'ReminderController@listTask')->name('reminder');
 Route::post('/reminder/new','ReminderController@addReminder');
 Route::delete('/reminder/delete','ReminderController@deleteReminder');
+Route::post('/type/new','ReminderController@addReminderType');
+Route::get('/type', function() {
+    return view('type');
+});
 
 // Route::get('/profile', 'ProfileController@getProfile');
 

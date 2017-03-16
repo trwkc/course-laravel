@@ -5,7 +5,7 @@
       <label id="textReminder">Reminder</label>
       <textarea type="text" id="textReminder" name="content" rows="8" class="form-control"></textarea>
     </div>
-    <label id="reminder-type">Type</label>
+    <label id="reminder-type">Type</label><a href="type"> [Add]</a>
     <div class="form-group">
     @foreach($types as $type)
       <label class="radio-inline">

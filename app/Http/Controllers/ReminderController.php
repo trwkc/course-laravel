@@ -42,4 +42,13 @@ class ReminderController extends Controller
         return back()->with('status','Task finished !!');
 
     }
+
+    public function addReminderType(Request $request)
+    {
+        $type = new ReminderType;
+        $type->tag = $request->tag;
+        
+        $type->save();
+        return redirect()->route('reminder');
+    }
 }

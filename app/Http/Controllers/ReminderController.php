@@ -54,7 +54,7 @@ class ReminderController extends Controller
     {
         $this->validate($request, 
             [
-                'tag' => 'required'
+                'tag' => 'required|unique:ReminderType,tag'
             ]
         );
         $type = new ReminderType;
